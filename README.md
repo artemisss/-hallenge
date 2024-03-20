@@ -220,6 +220,7 @@ func TestParser(t *testing.T) {
 }
 ```
 Тест для тестирования полученной функции GO на скорость выполнения:
+```
 func BenchmarkParser(b *testing.B) {
 	str := "#office:>=101011"
 
@@ -227,14 +228,17 @@ func BenchmarkParser(b *testing.B) {
 		_, _ = Parser(str)
 	}
 }
+```
 ​
 Команда запуска
-go test -bench=. -benchtime=10000000x -benchmem
+```go test -bench=. -benchtime=10000000x -benchmem```
 ​
 Ожидаемый ввод:
+```
 BenchmarkParser-8       10000000               xxx.x ns/op           xxx B/op          xx allocs/op
 PASS
 ok      go-scripts/parser       x.xxxs
+```
 
 # Как должен выглядеть результат для PYTHON
 
@@ -396,13 +400,15 @@ if __name__ == '__main__':
 ```
 
 Тест для тестирования полученной функции PYTHON на скорость выполнения:
+```
 python -m timeit -n 10000000 -s "import main" -v "main.Parser('#office:>=101011')"
-​
+​```
 Ожидаемый ввод:
+```
 raw times: x.xx sec, x.xx sec, x.xx sec, x.xx sec, x.xx sec
 
 10000000 loops, best of 5: xxx nsec per loop
-
+```
 
 
 
